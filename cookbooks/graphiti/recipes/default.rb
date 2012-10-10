@@ -67,17 +67,17 @@ execute "graphiti: untar" do
   notifies :run, resources(:execute => "bundle"), :immediately
 end
 
-aws = data_bag_item "aws", node.chef_environment
-template File.join(node.graphiti.base, "config", "amazon_s3.yml") do
-  variables :hash => { node.chef_environment => {
-      "bucket" => node.graphiti.s3_bucket,
-      "access_key_id" => aws["aws_access_key_id"],
-      "secret_access_key" => aws["aws_secret_access_key"]
-    } }
-  owner "www-data"
-  group "www-data"
-  notifies :restart, "service[graphiti]"
-end
+#aws = data_bag_item "aws", node.chef_environment
+#template File.join(node.graphiti.base, "config", "amazon_s3.yml") do
+  #variables :hash => { node.chef_environment => {
+      #"bucket" => node.graphiti.s3_bucket,
+      #"access_key_id" => aws["aws_access_key_id"],
+      #"secret_access_key" => aws["aws_secret_access_key"]
+    #} }
+  #owner "www-data"
+  #group "www-data"
+  #notifies :restart, "service[graphiti]"
+#end
 
 template File.join(node.graphiti.base, "config", "settings.yml") do
   owner "www-data"
