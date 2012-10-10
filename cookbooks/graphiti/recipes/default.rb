@@ -18,7 +18,7 @@
 #
 include_recipe "build-essential"
 
-%w[libcurl4-gnutls-dev ruby1.9.1-full].each do |pkg|
+%w[libcurl4-gnutls-dev].each do |pkg|
   apt_package pkg
 end
 
