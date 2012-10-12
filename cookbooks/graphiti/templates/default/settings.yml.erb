@@ -1,15 +1,14 @@
 <% require "yaml" %>
-auto_refresh:
-  enabled: true # checked by default?
-  interval: 60 # seconds
 redis_url: <%= node.graphiti.redis_url %>
-graphiti_base_url: <%= node.graphiti.graphite_host %>
+graphite_base_url: <%= node.graphiti.graphite_host %>
 fonts:
   - DroidSans
   - DejaVuSans
 auto_refresh:
   enabled: true # checked by default?
   interval: 60 # seconds
+default_metrics:
+  - "stats.*.googlebot"
 default_options:
   title: "New Graph"
   from: -7d
