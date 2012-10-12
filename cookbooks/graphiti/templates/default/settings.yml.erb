@@ -1,3 +1,6 @@
 <% require "yaml" %>
+auto_refresh:
+  enabled: true # checked by default?
+  interval: 60 # seconds
 <%= YAML::dump @hash %>
 

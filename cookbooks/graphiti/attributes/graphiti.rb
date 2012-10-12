@@ -1,9 +1,9 @@
 default.graphiti.tarfile = "/usr/src/graphiti.tgz"
 default.graphiti.url = "https://github.com/paperlesspost/graphiti/tarball/master"
-default.graphiti.base = "/srv/graphiti"
+default.graphiti.base = "/opt/graphiti"
 default.graphiti.graphite_host = "localhost:#{default[:apache][:port]}"
 default.graphiti.redis_url = "localhost:6379:1/graphiti"
-default.graphiti.tmp_dir = "/srv/graphiti/tmp"
+default.graphiti.tmp_dir = "/opt/graphiti/tmp"
 default.graphiti.metric_prefix = "collectd"
 default.graphiti.default_metrics = %w[carbon.agents.*.metricsReceived]
 default.graphiti.unicorn.timeout = 60
