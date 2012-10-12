@@ -48,14 +48,13 @@ execute "bundle" do
 
   user "www-data"
   group "www-data"
-  environment "PATH" => "/var/lib/gems/1.9.1/bin"
   cwd node.graphiti.base
   action :nothing
 end
 
 cron "graphiti:metrics" do
   minute "*/15"
-  command "cd #{node.graphiti.base} && /var/lib/gems/1.9.1/bin/bundle exec rake graphiti:metrics"
+  command "cd #{node.graphiti.base} && bundle exec rake graphiti:metrics"
   user "www-data"
 end
 
@@ -66,18 +65,6 @@ execute "graphiti: untar" do
   group "www-data"
   notifies :run, resources(:execute => "bundle"), :immediately
 end
-
-#aws = data_bag_item "aws", node.chef_environment
-#template File.join(node.graphiti.base, "config", "amazon_s3.yml") do
-  #variables :hash => { node.chef_environment => {
-      #"bucket" => node.graphiti.s3_bucket,
-      #"access_key_id" => aws["aws_access_key_id"],
-      #"secret_access_key" => aws["aws_secret_access_key"]
-    #} }
-  #owner "www-data"
-  #group "www-data"
-  #notifies :restart, "service[graphiti]"
-#end
 
 template File.join(node.graphiti.base, "config", "settings.yml") do
   owner "www-data"
