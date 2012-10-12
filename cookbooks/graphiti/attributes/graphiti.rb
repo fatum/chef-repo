@@ -1,7 +1,7 @@
 default.graphiti.tarfile = "/usr/src/graphiti.tgz"
 default.graphiti.url = "https://github.com/paperlesspost/graphiti/tarball/master"
 default.graphiti.base = "/opt/graphiti"
-default.graphiti.graphite_host = "http://5.9.90.15:8081"
+default.graphiti.graphite_host = "http://5.9.90.15:8080"
 default.graphiti.redis_url = "localhost:6379:1/graphiti"
 default.graphiti.tmp_dir = "/opt/graphiti/tmp"
 default.graphiti.metric_prefix = "collectd"
