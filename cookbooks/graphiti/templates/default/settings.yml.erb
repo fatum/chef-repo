@@ -2,5 +2,6 @@
 auto_refresh:
   enabled: true # checked by default?
   interval: 60 # seconds
+redis_url: <%= node.graphiti.redis_url %>
 <%= YAML::dump @hash %>
 
