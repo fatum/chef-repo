@@ -69,15 +69,7 @@ end
 template File.join(node.graphiti.base, "config", "settings.yml") do
   owner "www-data"
   group "www-data"
-  variables :hash => {
-    "graphite_host" => node.graphiti.graphite_host,
-    "redis_url" => node.graphiti.redis_url,
-    "tmp_dir" => node.graphiti.tmp_dir,
-    "fonts" => %w[DroidSans DejaVuSans],
-    "metric_prefix" => node.graphiti.metric_prefix,
-    "default_options" => node.graphiti.default_options.to_hash,
-    "default_metrics" => node.graphiti.default_metrics.to_a,
-  }
+
   notifies :restart, "service[graphiti]"
 end
 

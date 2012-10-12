@@ -3,5 +3,20 @@ auto_refresh:
   enabled: true # checked by default?
   interval: 60 # seconds
 redis_url: <%= node.graphiti.redis_url %>
-<%= YAML::dump @hash %>
-
+graphiti_base_url: <%= node.graphiti.graphite_host %>
+fonts:
+  - DroidSans
+  - DejaVuSans
+auto_refresh:
+  enabled: true # checked by default?
+  interval: 60 # seconds
+default_options:
+  title: "New Graph"
+  from: -7d
+  font: DroidSans
+  fontSize: 10
+  thickness: 2
+  bgcolor: "#FFFFFF"
+  fgcolor: "#333333"
+  majorGridLineColor: "#ADADAD"
+  minorGridLineColor: "#E5E5E5"

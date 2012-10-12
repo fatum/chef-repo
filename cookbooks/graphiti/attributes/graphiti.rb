@@ -1,7 +1,7 @@
 default.graphiti.tarfile = "/usr/src/graphiti.tgz"
 default.graphiti.url = "https://github.com/paperlesspost/graphiti/tarball/master"
 default.graphiti.base = "/opt/graphiti"
-default.graphiti.graphite_host = "localhost:#{default[:apache][:port]}"
+default.graphiti.graphite_host = "localhost:#{default.apache.port.to_s}"
 default.graphiti.redis_url = "localhost:6379:1/graphiti"
 default.graphiti.tmp_dir = "/opt/graphiti/tmp"
 default.graphiti.metric_prefix = "collectd"
@@ -10,19 +10,3 @@ default.graphiti.unicorn.timeout = 60
 default.graphiti.unicorn.cow_friendly = true
 default.graphiti.s3_bucket = "graphiti"
 default.graphiti.port = 8081
-
-default.graphiti.default_options = {
-  "title" => "New Graph",
-  "from" => "-6h",
-  "font" => "DroidSans",
-  "fontSize" => 10,
-  "thickness" => 2,
-  "bgcolor" => "#FFFFFF",
-  "fgcolor" => "#333333",
-  "majorGridLineColor" => "#ADADAD",
-  "minorGridLineColor" => "#E5E5E5",
-  "hideLegend" => false,
-  "areaMode" => "stacked"
-}
-
-default.graphiti.graph_types = []
