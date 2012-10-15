@@ -81,7 +81,7 @@ end
 template File.join(node.graphiti.base, "config", "unicorn.rb") do
   owner "www-data"
   group "www-data"
-  variables( :worker_processes => node.cpu.total,
+  variables( :worker_processes => 1,
              :timeout => node.graphiti.unicorn.timeout,
              :cow_friendly => node.graphiti.unicorn.cow_friendly )
   notifies :restart, "service[graphiti]"
